@@ -1,0 +1,177 @@
+body {
+    font-size: 15pt;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Dancing Script', sans-serif;
+    background: floralwhite;
+}
+
+.container {
+  opacity: 0;
+  width: 300px;
+  height: 300px;
+  
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: .3.5s;
+   box-shadow: 10px 10px 5px #aaaaaa;
+  background: peru
+}
+
+.container > div {
+  font-family: "Audiowide";
+  text-shadow: 3px 3px 10px #ababab;
+  color: yellow;
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute 
+}
+#desc {
+  font-size: 8px;
+  top: 70%;
+  z-index: 4;
+  opacity: .8;
+  font-family: "Audiowide", sans-serif;
+  
+}
+
+#center { 
+  width: 10px;
+  height: 10px;
+  background: yellow;
+  z-index: 6
+}
+
+#secondsHand {
+  width: 110px;
+  height: 0px;
+  z-index: 5;
+  border-radius: 0px;
+  left: 50%;
+  border: 1px solid;
+  transform-origin: 0% 0%;
+  color: greenyellow;
+  border-radius: 50%
+}
+
+#minuteHand {
+  width: 80px;
+  height: 0px;
+  border-radius: 0px;
+  left: 50%;
+  border: 1px solid;
+  transform-origin: 0% 0%;
+  color: yellowgreen;
+  border-radius: 50%
+}
+
+#hourHand {
+  width: 50px;
+  height: 0px;
+  background: pink;
+  border-radius: 0px;
+  left: 50%;
+  border: 1px solid;
+  transform-origin: 0% 0%;
+  border-radius: 50%
+}
+
+.twelve {
+  transform: translate(
+  calc(cos(270deg) * 135px),
+  calc(sin(270deg) * 135px) 
+  );
+}
+
+.one {
+  transform: translate(
+  calc(cos(300deg) * 135px),
+  calc(sin(300deg) * 135px) 
+  );
+}
+
+
+.two {
+  transform: translate(
+  calc(cos(330deg) * 135px),
+  calc(sin(330deg) * 135px) 
+  );
+}
+
+.three {
+  
+  transform: translate(
+  calc(cos(0deg) * 135px),
+  calc(sin(0deg) * 135px) 
+  );
+}
+
+.four {
+  transform: translate(
+  calc(cos(30deg) * 135px),
+  calc(sin(30deg) * 135px) 
+  );
+}
+
+.five {
+  transform: translate(
+  calc(cos(60deg) * 135px),
+  calc(sin(60deg) * 135px) 
+  );
+}
+
+.six {
+  transform: translate(
+  calc(cos(90deg) * 135px),
+  calc(sin(90deg) * 135px) 
+  );
+}
+
+.seven {
+  transform: translate(
+  calc(cos(120deg) * 135px),
+  calc(sin(120deg) * 135px) 
+  );
+}
+
+
+.eight {
+  transform: translate(
+  calc(cos(150deg) * 135px),
+  calc(sin(150deg) * 135px) 
+  );
+}
+
+.nine {
+  transform: translate(
+  calc(cos(180deg) * 135px),
+  calc(sin(180deg) * 135px) 
+  );
+}
+
+.ten {
+  transform: translate(
+  calc(cos(210deg) * 135px),
+  calc(sin(210deg) * 135px) 
+  );
+}
+
+.eleven{
+  transform: translate(
+  calc(cos(240deg) * 135px),
+  calc(sin(240deg) * 135px) 
+  );
+}
+
+
+
