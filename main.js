@@ -1,9 +1,11 @@
 let container= document.getElementsByClassName("container ")[0]
+let shadow = document.getElementsByClassName("shadow")[0]
+let footer = document.querySelector(".footer")
 container.style.opacity = 1
 
 let secondsHand = document.getElementById("secondsHand")
 
-let button = document.querySelector("button")
+let button = document.querySelectorAll("button")
 
 let minuteHand = document.getElementById("minuteHand")
 
@@ -43,8 +45,10 @@ for (let i = 0; i <61; i++) {
 				let p = document.createElement("p")
 				let text = document.createTextNode("-")
 				p.appendChild(text)
+				p.classList.add("dotContent")
 				div.appendChild(p)
-				div.style.transform = "translate( calc( cos(" + distance + "deg) * 115px), calc( sin(" + distance + "deg) * 115px )"
+				div.style.transform = 
+				"translate( calc( cos(" + distance + "deg) * 115px), calc( sin(" + distance + "deg) * 115px )"
 				p.style.transform = "rotate(" + distance +"deg)"
 				
 				if (distance % 30 == 0) {
@@ -59,17 +63,54 @@ for (let i = 0; i <61; i++) {
 				
 
 let rot = 360
-let themes = [ "#000000", "linear-gradient(10deg, #f00, #f0f)", "#432024", "#B8472F", "#8E872A", "#4C7455", "peru", "#2A464D", "#171B75", "#2A464D", "#CB60B8"]
+
+let themes = [ "#000000", "linear-gradient(10deg, #f00, #f0f)", 
+"#432024", "#B8472F", "#8E872A", "#4C7455", 
+"peru", "#2A464D", "#171B75", "#2A464D", "#CB60B8"]
+
+
+
 let changeTheme = () => {
-				let theme =themes[Math.floor(Math.random() * 10)]
-				
-				console.log(theme)
+				let theme =themes[Math.floor(  Math.random() * 10)    ]
 				
 				container.style.background = theme
-				button.style.background = theme
+				button.forEach( b => {b.style.background = theme})
+				footer.style.background = theme
 				
 				container.style.transform = "rotate(" + rot + "deg)"
 				rot += 360
+}
+
+
+let dots = ["*", "•", "+", "=", "<"]
+
+let dotChange = () => {
+  
+				let dot = document.querySelectorAll(".dotContent")
+				
+				let random = Math.floor(Math.random()* 10)
+				let newDot = dots[  Math.floor(  random/2 ) ]
+				
+				dot.forEach( d => {
+								
+			  d.innerText = newDot
+								
+				})
+}
+
+//let animate = document.getElementById("animate")
+
+let animateClock = () => {
+  shadow.classList.toggle('.animation')
+ // shadow.id = "animate"
+  
+  if (shadow.id) {
+    shadow.removeAttribute('id')
+  } else { 
+    shadow.id = "animate"
+  }
+  
+  //("id", "animate")
 }
 
 
