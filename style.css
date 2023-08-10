@@ -1,22 +1,36 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box
+}
+
 body {
     font-size: 15pt;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    gap: 50px;
     font-family: 'Dancing Script', sans-serif;
     background: #ffff;
-    background-image: url("img2.jpg");
     perspective: 1000px;
     min-height: 100vh
 }
+
+audio {
+  margin-top: 5%;
+  color: red
+}
+
 
 .shadow {
   box-shadow: 10px 10px 5px #aaaaaa;
   border-radius: 50%;
   
 }
+
+
 
 .container {
   transform-style: preserve-3d;
@@ -31,8 +45,8 @@ body {
   transition: .3.5s;
    
   background: peru;
-  #background: linear-gradient(10deg, #f00, #f0f);
-  background: #432024;
+  
+  background: #000000;
   transition: 2s
 }
 
@@ -111,7 +125,7 @@ body {
   border-radius: 50%;
   display: flex;
   justify-content: flex-end;
-  background: transparent
+  background: transparent;
   
   
   transform-origin: 50% 50%;
@@ -130,16 +144,27 @@ body {
 }
 
 #hourHand {
-  width: 50px;
+  display: flex;
+  justify-content: flex-end;
+  background: transparent;
+  width: 35%;
   height: 4px;
-  background: #ffff;
+ 
   border-radius: 0px;
-  left: 50%;
-  #border: 1px solid;
-  transform-origin: 0% 0%;
+  
+  transform-origin: 50% 50%;
   border-radius: 50%
 }
 
+#hourHand .visible {
+  height: 4px;
+  width: 50%;
+  z-index: 7;
+  border-radius: 50%;
+  background: #ffff;
+  
+}
+ 
 .twelve {
   transform: translate(
   calc(cos(270deg) * 135px),
@@ -232,18 +257,40 @@ body {
 button {
   
   font-family: "Audiowide", sans-serif;
-  margin-top: 50%;
-  padding: 8px 16px;
-  font-size: 12px;
+  padding: 8px 8px;
+  font-size: 10px;
   font-weight: bold;
   color: #ffff;
-  background: #432024;
+  background: #000000;
   border: none;
   border-radius: 16px;
   box-shadow: 10px 10px 5px #aaaaaa;
   transition: 2s
 }
 
+.btns {
+  width: 100%;
+  margin-top: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}
+
+
+.footer {
+  padding: 8px 16px;
+  min-height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  color: #ffff;
+  font-size: 8px;
+   font-family: "Audiowide", sans-serif;
+   margin-bottom: 0px;
+   transition: 2s
+}
 
 @keyframes animate {
   0%, 100%{
@@ -255,6 +302,42 @@ button {
   }
 }
 
-
-
+@keyframes animateClock {
+  
+  100%, 0%{
+    transform: translateZ(-300px)
+  }
+  
+  20% {
+    transform: rotateY(30deg);
+  }
+  
+  50% {
+    transform: rotateX(-20deg);
     
+  }
+  
+  
+  80% {
+    transform: rotateY(-20deg);
+  }
+  
+}
+
+@keyframes translate {
+  
+  from {
+    transform: translateZ(0px)
+  }
+  
+  to {
+    transform: translateZ(200px)
+  }
+  
+}
+
+#animate {
+  animation: animateClock 3s infinite linear;
+
+    }
+       
