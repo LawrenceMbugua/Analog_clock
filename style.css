@@ -2,40 +2,69 @@ body {
     font-size: 15pt;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Dancing Script', sans-serif;
-    background: floralwhite;
+    background: #ffff;
+    background-image: url("img2.jpg");
+    perspective: 1000px;
+    min-height: 100vh
+}
+
+.shadow {
+  box-shadow: 10px 10px 5px #aaaaaa;
+  border-radius: 50%;
+  
 }
 
 .container {
+  transform-style: preserve-3d;
   opacity: 0;
-  width: 300px;
-  height: 300px;
-  
+  width: 310px;
+  height: 310px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   transition: .3.5s;
-   box-shadow: 10px 10px 5px #aaaaaa;
-  background: peru
+   
+  background: peru;
+  #background: linear-gradient(10deg, #f00, #f0f);
+  background: #432024;
+  transition: 2s
 }
 
-.container > div {
-  font-family: "Audiowide";
+.container > div{
+  
+  font-family: "Audiowide", sans-serif;
   text-shadow: 3px 3px 10px #ababab;
-  color: yellow;
+  color: white;
   width: 25px;
   height: 25px;
-
+  
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  position: absolute 
+  position: absolute;
+  
 }
+
+.container .dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 4s
+}
+
+.container .dot p {
+  font-size: 5px;
+  color: #ffff;
+  
+}
+
 #desc {
   font-size: 8px;
   top: 70%;
@@ -46,42 +75,67 @@ body {
 }
 
 #center { 
-  width: 10px;
-  height: 10px;
-  background: yellow;
+  width: 8px;
+  height: 8px;
+  background: #ffff;
   z-index: 6
 }
 
 #secondsHand {
-  width: 110px;
-  height: 0px;
+  width: 75%;
+  height: 2px;
   z-index: 5;
-  border-radius: 0px;
-  left: 50%;
-  border: 1px solid;
-  transform-origin: 0% 0%;
-  color: greenyellow;
-  border-radius: 50%
+  border-radius: 50%;
+  background: transparent;
+  transform-origin: 50% 50%;
+  color: white;
+  
+  display: flex;
+  justify-content: flex-end
+}
+
+#secondsHand .visible {
+   width: 50%;
+  height: 2px;
+  z-index: 6;
+  border-radius: 50%;
+  background: #ffff;
+  position: relative;
+  color: #ffff
+  
 }
 
 #minuteHand {
-  width: 80px;
-  height: 0px;
-  border-radius: 0px;
-  left: 50%;
-  border: 1px solid;
-  transform-origin: 0% 0%;
-  color: yellowgreen;
+  width: 50%;
+  height: 2px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: flex-end;
+  background: transparent
+  
+  
+  transform-origin: 50% 50%;
+  color: #ffff;
   border-radius: 50%
+}
+
+#minuteHand .visible {
+  width: 50%;
+  height: 2px;
+  z-index: 6;
+  border-radius: 50%;
+  background: #ffff;
+  position: relative;
+  color: #ffff
 }
 
 #hourHand {
   width: 50px;
-  height: 0px;
-  background: pink;
+  height: 4px;
+  background: #ffff;
   border-radius: 0px;
   left: 50%;
-  border: 1px solid;
+  #border: 1px solid;
   transform-origin: 0% 0%;
   border-radius: 50%
 }
@@ -90,7 +144,7 @@ body {
   transform: translate(
   calc(cos(270deg) * 135px),
   calc(sin(270deg) * 135px) 
-  );
+  )
 }
 
 .one {
@@ -98,6 +152,7 @@ body {
   calc(cos(300deg) * 135px),
   calc(sin(300deg) * 135px) 
   );
+  
 }
 
 
@@ -174,4 +229,32 @@ body {
 }
 
 
+button {
+  
+  font-family: "Audiowide", sans-serif;
+  margin-top: 50%;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #ffff;
+  background: #432024;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 10px 10px 5px #aaaaaa;
+  transition: 2s
+}
 
+
+@keyframes animate {
+  0%, 100%{
+    background: linear-gradient( #f00, #f0f)
+  }
+  
+  50% {
+    background: linear-gradient(to right, #f0f, #f00)
+  }
+}
+
+
+
+    
