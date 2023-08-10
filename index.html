@@ -20,15 +20,21 @@
 <body>
   
   
-  
-  <div class="container font-effect-neon">
+  <div class="shadow">
+  <div id="container" class="container font-effect-neon">
     
     <div id="center"></div>
     
-     <div id="secondsHand"></div>
-     <div id="minuteHand"></div>
-     <div id="hourHand"></div>
+     <div id="secondsHand">
+       <div class="visible"></div>
+     </div>
     
+     <div id="minuteHand">
+       <div class="visible"></div>
+     </div>
+    
+     <div id="hourHand"></div>
+     
      <div class="twelve">12</div> 
      <div class="one">1</div>
      <div class="two">2</div>
@@ -42,12 +48,14 @@
      <div class="ten">10</div>
      <div class="eleven">11</div>
      
-     <div id="desc" class="font-effect-neon">Developed by Lawrence</div>
+    
+  </div>
   </div>
   
   
+  <button onclick={changeTheme()}>Change theme</button>
   
-  
-  <script src="main.js"></script>
+  <script src="scripts/main.js"></script>
 </body>
-</html>
+    </html>
+  
