@@ -51,7 +51,7 @@ audio {
 }
 
 .container > div{
-  
+  font-size: 14px;
   font-family: "Audiowide", sans-serif;
   text-shadow: 3px 3px 10px #ababab;
   color: white;
